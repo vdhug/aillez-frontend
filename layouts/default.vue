@@ -146,5 +146,5 @@
 </template>
 
 <script setup>
-const { data: response } = await useFetch("http://localhost:1337/api/configuracao")
+const { data: response } = await useFetch("https://strapi-production-b8ce.up.railway.app/api/configuracao")
 </script>
