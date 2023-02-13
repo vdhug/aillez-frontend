@@ -47,10 +47,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto p-4 p-lg-0">
-              <a href="/" class="nav-item nav-link active">Home</a>
-              <a href="/sobre" class="nav-item nav-link">Sobre</a>
-              <a href="/servicos" class="nav-item nav-link">Serviços</a>
-              <a href="/projetos" class="nav-item nav-link">Projetos</a>
+              <a id="home-link" href="/" class="nav-item nav-link active">Home</a>
+              <a id="sobre-link" href="/sobre" class="nav-item nav-link">Sobre</a>
+              <a id="servicos-link" href="/servicos" class="nav-item nav-link">Serviços</a>
+              <a id="projetos-link" href="/projetos" class="nav-item nav-link">Projetos</a>
               <!-- <div class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                   <div class="dropdown-menu bg-light m-0">
@@ -61,7 +61,7 @@
                       <a href="404.html" class="dropdown-item">404 Page</a>
                   </div>
               </div> -->
-              <a href="/contato" class="nav-item nav-link">Contato</a>
+              <a id="contato-link" href="/contato" class="nav-item nav-link">Contato</a>
           </div>
           <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Peça Um Orçamento<i class="fa fa-arrow-right ms-3"></i></a>
       </div>

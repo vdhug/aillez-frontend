@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1);
     };
     spinner();
+    const home = document.getElementById('home-link');
+    const path_name = location.pathname.split('/').filter(Boolean);
+    if (path_name.length !== 0) {
+        const firstPath = path_name[0];
+        const firstPathEl = document.getElementById(`${firstPath}-link`);
+        home.classList.remove('active');
+        firstPathEl.classList.add('active');
+    }
     
     
     // Initiate the wowjs
