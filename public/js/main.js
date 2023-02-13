@@ -44,8 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         time: 2000
     });
 
-    debugger
-
     // Header carousel
     $(".header-carousel").owlCarousel({
         autoplay: true,
