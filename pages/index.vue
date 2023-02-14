@@ -3,43 +3,15 @@
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel position-relative">
-            <div class="owl-carousel-item position-relative" data-dot="<img src='/static/img/carousel-1.jpg'>">
-                <img class="img-fluid" src="/static/img/carousel-1.jpg" alt="">
+            <div  v-for="slide in response.data.attributes.Slider" :key="slide.id" class="owl-carousel-item position-relative" data-dot="<img src='/static/img/carousel-1.jpg'>">
+                <img class="img-fluid" :src="slide.Foto.data.attributes.url" alt="">
                 <div class="owl-carousel-inner">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
-                                <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable Energy</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative" data-dot="<img src='/static/img/carousel-2.jpg'>">
-                <img class="img-fluid" src="/static/img/carousel-2.jpg" alt="">
-                <div class="owl-carousel-inner">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-10 col-lg-8">
-                                <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable Energy</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative" data-dot="<img src='/static/img/carousel-3.jpg'>">
-                <img class="img-fluid" src="/static/img/carousel-3.jpg" alt="">
-                <div class="owl-carousel-inner">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-10 col-lg-8">
-                                <h1 class="display-2 text-white animated slideInDown">Pioneers Of Solar And Renewable Energy</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a>
+                                <h1 class="display-2 text-white animated slideInDown">{{ slide.Nome }}</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3"> {{ slide.Descricao }}</p>
+                                <a href="/servicos" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Saiba Mais</a>
                             </div>
                         </div>
                     </div>
@@ -59,9 +31,9 @@
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <i class="fa fa-users text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">3453</h1>
+                        <h1 class="mb-0" data-toggle="counter-up">{{ response.data.attributes.Numeros.Clientes }}</h1>
                     </div>
-                    <h5 class="mb-3">Happy Customers</h5>
+                    <h5 class="mb-3">Clientes Felizes</h5>
                     <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
@@ -69,9 +41,9 @@
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <i class="fa fa-check text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">4234</h1>
+                        <h1 class="mb-0" data-toggle="counter-up">{{ response.data.attributes.Numeros.Projetos }}</h1>
                     </div>
-                    <h5 class="mb-3">Project Done</h5>
+                    <h5 class="mb-3">Projetos Finalizados</h5>
                     <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
@@ -79,9 +51,9 @@
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <i class="fa fa-award text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">3123</h1>
+                        <h1 class="mb-0" data-toggle="counter-up">{{ response.data.attributes.Numeros.Premios }}</h1>
                     </div>
-                    <h5 class="mb-3">Awards Win</h5>
+                    <h5 class="mb-3">Premios</h5>
                     <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
@@ -89,9 +61,9 @@
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <i class="fa fa-users-cog text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">1831</h1>
+                        <h1 class="mb-0" data-toggle="counter-up">{{ response.data.attributes.Numeros.Funcionarios }}</h1>
                     </div>
-                    <h5 class="mb-3">Expert Workers</h5>
+                    <h5 class="mb-3">Funcionários</h5>
                     <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
                 </div>
             </div>
@@ -556,9 +528,12 @@
         </div>
     </div>
     <!-- Testimonial End -->
-
+    {{ response }}
   </main>
 </template>
 
 <style>
 </style>
+<script setup>
+const { data: response } = await useFetch("https://strapi-production-b8ce.up.railway.app/api/home?populate=deep")
+</script>

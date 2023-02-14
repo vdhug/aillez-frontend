@@ -1,11 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    setTimeout(function(){ 
+        // Header carousel
+        $(".header-carousel").owlCarousel({
+            autoplay: true,
+            smartSpeed: 1500,
+            loop: true,
+            nav: false,
+            dots: true,
+            items: 1,
+            dotsData: true,
+        });
+    }, 1000); 
     // Spinner
     var spinner = function () {
         setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
             }
-        }, 1);
+        }, 1000);
     };
     spinner();
     const home = document.getElementById('home-link');
@@ -50,17 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
         time: 2000
-    });
-
-    // Header carousel
-    $(".header-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        loop: true,
-        nav: false,
-        dots: true,
-        items: 1,
-        dotsData: true,
     });
 
 

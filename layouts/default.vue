@@ -146,5 +146,6 @@
 </template>
 
 <script setup>
-const { data: response } = await useFetch("https://strapi-production-b8ce.up.railway.app/api/configuracao")
+const { data: response } = await useFetch("https://strapi-production-b8ce.up.railway.app/api/empresa");
+
 </script>
