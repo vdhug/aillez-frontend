@@ -3,7 +3,7 @@
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="owl-carousel header-carousel position-relative">
-            <div  v-for="slide in response.data.attributes.Slider" :key="slide.id" class="owl-carousel-item position-relative" data-dot="<img src='/static/img/carousel-1.jpg'>">
+            <div  v-for="slide in home.data.attributes.Slider" :key="slide.id" class="owl-carousel-item position-relative" data-dot="<img src='/static/img/carousel-1.jpg'>">
                 <img class="img-fluid" :src="slide.Foto.data.attributes.url" alt="">
                 <div class="owl-carousel-inner">
                     <div class="container">
@@ -31,7 +31,7 @@
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <i class="fa fa-users text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">{{ response.data.attributes.Numeros.Clientes }}</h1>
+                        <h1 class="mb-0" data-toggle="counter-up">{{ home.data.attributes.Numeros.Clientes }}</h1>
                     </div>
                     <h5 class="mb-3">Clientes Felizes</h5>
                     <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
@@ -41,7 +41,7 @@
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <i class="fa fa-check text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">{{ response.data.attributes.Numeros.Projetos }}</h1>
+                        <h1 class="mb-0" data-toggle="counter-up">{{ home.data.attributes.Numeros.Projetos }}</h1>
                     </div>
                     <h5 class="mb-3">Projetos Finalizados</h5>
                     <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
@@ -51,7 +51,7 @@
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <i class="fa fa-award text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">{{ response.data.attributes.Numeros.Premios }}</h1>
+                        <h1 class="mb-0" data-toggle="counter-up">{{ home.data.attributes.Numeros.Premios }}</h1>
                     </div>
                     <h5 class="mb-3">Premios</h5>
                     <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
@@ -61,7 +61,7 @@
                         <div class="btn-lg-square bg-primary rounded-circle me-3">
                             <i class="fa fa-users-cog text-white"></i>
                         </div>
-                        <h1 class="mb-0" data-toggle="counter-up">{{ response.data.attributes.Numeros.Funcionarios }}</h1>
+                        <h1 class="mb-0" data-toggle="counter-up">{{ home.data.attributes.Numeros.Funcionarios }}</h1>
                     </div>
                     <h5 class="mb-3">Funcionários</h5>
                     <span>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit</span>
@@ -83,13 +83,14 @@
                 </div>
                 <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
-                        <h6 class="text-primary">About Us</h6>
-                        <h1 class="mb-4">25+ Years Experience In Solar & Renewable Energy Industry</h1>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <p><i class="fa fa-check-circle text-primary me-3"></i>Diam dolor diam ipsum</p>
-                        <p><i class="fa fa-check-circle text-primary me-3"></i>Aliqu diam amet diam et eos</p>
-                        <p><i class="fa fa-check-circle text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
-                        <a href="" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Explore More</a>
+                        <h6 class="text-primary">Sobre Nós</h6>
+                        <h1 class="mb-4">{{ sobre.data.attributes.Titulo }}</h1>
+                        <p>{{ sobre.data.attributes.Descricao }}</p>
+                        <p v-for="atributo in sobre.data.attributes.Atributos" :key="atributo.id">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            {{ atributo.Descricao }}
+                        </p>
+                        <a href="/servicos" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Saiba Mais</a>
                     </div>
                 </div>
             </div>
@@ -535,5 +536,7 @@
 <style>
 </style>
 <script setup>
-const { data: response } = await useFetch("https://strapi-production-b8ce.up.railway.app/api/home?populate=deep")
+const { data: home } = await useFetch("https://strapi-production-b8ce.up.railway.app/api/home?populate=deep")
+
+const { data: sobre } = await useFetch("https://strapi-production-b8ce.up.railway.app/api/sobre?populate=deep")
 </script>
